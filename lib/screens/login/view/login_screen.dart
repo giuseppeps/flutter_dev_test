@@ -31,7 +31,8 @@ class LoginScreen extends StatelessWidget {
                 PasswordTextfield(onChanged: (_) {}),
                 const SizedBox(height: 20),
                 CustomButton(
-                  onPressed: () => router.push(Routes.recoverySecret),
+                  // onPressed: () => router.push(Routes.recoverySecret),
+                  onPressed: () => router.go(Routes.home),
                   title: 'Entrar',
                 )
               ],
