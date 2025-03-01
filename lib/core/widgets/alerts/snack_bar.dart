@@ -37,7 +37,7 @@ class CustomSnackBar extends SnackBar {
             ],
           ),
           behavior: SnackBarBehavior.floating,
-          backgroundColor: isError ? CustomColors.red400 : CustomColors.dark400,
+          backgroundColor: isError ? CustomColors.red400 : CustomColors.primary,
           elevation: 6,
           duration: const Duration(seconds: 2),
           shape: RoundedRectangleBorder(

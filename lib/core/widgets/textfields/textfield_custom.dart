@@ -16,7 +16,7 @@ class TextFieldCustom extends StatelessWidget {
   final String? initialValue;
   final TextEditingController? controller;
   final int? maxLines;
-  final Function(String)? onFieldSubmitted;
+  final Function(String)? onSubmit;
 
   const TextFieldCustom({
     super.key,
@@ -32,7 +32,7 @@ class TextFieldCustom extends StatelessWidget {
     this.initialValue,
     this.controller,
     this.maxLines = 1,
-    this.onFieldSubmitted,
+    this.onSubmit,
   });
 
   @override
@@ -43,7 +43,7 @@ class TextFieldCustom extends StatelessWidget {
         Container(
           padding: const EdgeInsets.symmetric(horizontal: 12),
           decoration: BoxDecoration(
-            color: CustomColors.lightBackground,
+            color: CustomColors.lightBackground400,
             borderRadius: BorderRadius.circular(8),
           ),
           child: TextFormField(
@@ -54,7 +54,7 @@ class TextFieldCustom extends StatelessWidget {
             maxLines: maxLines,
             initialValue: initialValue,
             onChanged: onChanged,
-            onFieldSubmitted: onFieldSubmitted,
+            onFieldSubmitted: onSubmit,
             keyboardType: keyboardType,
             inputFormatters: inputFormatters,
             textInputAction: textInputAction,

@@ -14,6 +14,7 @@ class PasswordTextfield extends TextFieldCustom {
   }) : super(
           hintText: 'Senha',
           keyboardType: TextInputType.text,
+          isPassword: true,
           validator: validatePassword,
         );
 }

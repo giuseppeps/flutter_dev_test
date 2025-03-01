@@ -1,5 +1,6 @@
 import 'package:flutter_dev_test/routes/routes.dart';
 import 'package:flutter_dev_test/screens/login/view/login_screen.dart';
+import 'package:flutter_dev_test/screens/recovery_secret/view/recovery_secret_screen.dart';
 import 'package:go_router/go_router.dart';
 
 GoRouter router = GoRouter(
@@ -12,7 +13,7 @@ GoRouter router = GoRouter(
     ),
     GoRoute(
       path: Routes.recoverySecret,
-      builder: (context, state) => const LoginScreen(),
+      builder: (context, state) => const RecoverySecretScreen(),
     ),
     GoRoute(
       path: Routes.home,
