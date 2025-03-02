@@ -21,16 +21,4 @@ GoRouter router = GoRouter(
       builder: (context, state) => const HomeScreen(),
     ),
   ],
-  redirect: (context, state) async {
-    // final token = await storage.get('token');
-    // if (user == null) {
-    //   await LoginRepository().checkUserSession();
-    // }
-    // if (token == null || token.isEmpty) return Routes.login;
-    // if (state.fullPath == Routes.login && user != null) {
-    //   return Routes.home;
-    // }
-
-    return null;
-  },
 );
