@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_dev_test/core/api/api_client.dart';
 import 'package:flutter_dev_test/core/api/base_service.dart';
-import 'package:flutter_dev_test/screens/login/controller/login_repository.dart';
+import 'package:flutter_dev_test/screens/auth/login/controller/login_repository.dart';
 
 class LoginService extends BaseService {
   final loginRepository = LoginRepository();

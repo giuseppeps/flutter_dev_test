@@ -5,8 +5,8 @@ import 'package:flutter_dev_test/core/widgets/alerts/custom_snack_bar.dart';
 import 'package:flutter_dev_test/core/widgets/base_screen.dart';
 import 'package:flutter_dev_test/core/widgets/buttons/custom_button.dart';
 import 'package:flutter_dev_test/core/widgets/textfields/otp_textfield.dart';
-import 'package:flutter_dev_test/screens/recovery_secret/controller/cubit/recovery_secret_cubit.dart';
-import 'package:flutter_dev_test/screens/recovery_secret/view/widgets/didnt_receive_button.dart';
+import 'package:flutter_dev_test/screens/auth/recovery_secret/controller/cubit/recovery_secret_cubit.dart';
+import 'package:flutter_dev_test/screens/auth/recovery_secret/view/widgets/didnt_receive_button.dart';
 import 'package:flutter_dev_test/theme/custom_colors.dart';
 import 'package:flutter_dev_test/theme/texts.dart';
 

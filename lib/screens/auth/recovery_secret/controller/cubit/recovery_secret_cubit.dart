@@ -2,8 +2,8 @@ import 'package:bloc/bloc.dart';
 import 'package:flutter_dev_test/core/state/base_state.dart';
 import 'package:flutter_dev_test/routes/app_routes.dart';
 import 'package:flutter_dev_test/routes/routes.dart';
-import 'package:flutter_dev_test/screens/login/model/email_password_model.dart';
-import 'package:flutter_dev_test/screens/recovery_secret/controller/recovery_secret_service.dart';
+import 'package:flutter_dev_test/screens/auth/login/model/email_password_model.dart';
+import 'package:flutter_dev_test/screens/auth/recovery_secret/controller/recovery_secret_service.dart';
 
 part 'recovery_secret_state.dart';
 

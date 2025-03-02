@@ -6,8 +6,8 @@ import 'package:flutter_dev_test/core/widgets/base_screen.dart';
 import 'package:flutter_dev_test/core/widgets/buttons/custom_button.dart';
 import 'package:flutter_dev_test/core/widgets/textfields/email_textfield.dart';
 import 'package:flutter_dev_test/core/widgets/textfields/password_textfield.dart';
-import 'package:flutter_dev_test/screens/login/controller/cubit/login_cubit.dart';
-import 'package:flutter_dev_test/screens/login/view/widgets/logo_image.dart';
+import 'package:flutter_dev_test/screens/auth/login/controller/cubit/login_cubit.dart';
+import 'package:flutter_dev_test/screens/auth/login/view/widgets/logo_image.dart';
 import 'package:flutter_dev_test/theme/custom_colors.dart';
 import 'package:flutter_dev_test/theme/texts.dart';
 

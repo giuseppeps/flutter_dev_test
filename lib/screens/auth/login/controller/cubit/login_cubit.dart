@@ -3,8 +3,8 @@ import 'package:flutter_dev_test/core/state/base_state.dart';
 import 'package:flutter_dev_test/core/utils/global_instances.dart';
 import 'package:flutter_dev_test/routes/app_routes.dart';
 import 'package:flutter_dev_test/routes/routes.dart';
-import 'package:flutter_dev_test/screens/login/controller/login_service.dart';
-import 'package:flutter_dev_test/screens/login/model/email_password_model.dart';
+import 'package:flutter_dev_test/screens/auth/login/controller/login_service.dart';
+import 'package:flutter_dev_test/screens/auth/login/model/email_password_model.dart';
 
 part 'login_state.dart';
 
