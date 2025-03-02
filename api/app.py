@@ -1,11 +1,15 @@
-import pyotp
 import logging
-from flask import Flask, request, jsonify
+
+import pyotp
+from flask import Flask, jsonify, request
+from flask_cors import CORS
 
 # Configure logging
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+logging.basicConfig(level=logging.INFO,
+                    format='%(asctime)s - %(levelname)s - %(message)s')
 
 app = Flask(__name__)
+CORS(app)
 
 # Dummy credentials for example
 USER_CREDENTIALS = {
@@ -16,6 +20,7 @@ USER_CREDENTIALS = {
 }
 
 VALID_RECOVERY_CODE = "000010"  # Special code to bypass TOTP verification
+
 
 @app.route('/auth/login', methods=['POST'])
 def login():
@@ -32,7 +37,8 @@ def login():
         logging.info(f"Username '{username}' provided correct password.")
         totp = pyotp.TOTP(USER_CREDENTIALS[username]["totp_secret"])
         if totp.verify(totp_code):
-            logging.info(f"TOTP code for username '{username}' verified successfully.")
+            logging.info(
+                f"TOTP code for username '{username}' verified successfully.")
             response = {
                 "message": "Login successful",
                 "status": "success"
@@ -40,7 +46,8 @@ def login():
             return jsonify(response), 200  # Successful login
         else:
             logging.warning(f"TOTP code for username '{username}' is invalid.")
-            logging.warning(f"TOTP input: {totp_code}, TOTP expected: {totp.now()}")
+            logging.warning(
+                f"TOTP input: {totp_code}, TOTP expected: {totp.now()}")
             response = {
                 "message": "Invalid TOTP code",
                 "status": "failure"
@@ -54,6 +61,7 @@ def login():
         }
         return jsonify(response), 401  # Invalid credentials
 
+
 @app.route('/auth/recovery-secret', methods=['POST'])
 def get_seed():
     data = request.json
@@ -61,7 +69,8 @@ def get_seed():
     password = data.get("password")
     code = data.get("code")
 
-    logging.info(f"Recovery secret attempt for username: {username} with code: {code}")
+    logging.info(
+        f"Recovery secret attempt for username: {username} with code: {code}")
 
     # Check if the user exists
     if username in USER_CREDENTIALS:
@@ -69,15 +78,19 @@ def get_seed():
         if password == USER_CREDENTIALS[username]["password"]:
             # Special check for the code '000010'
             if code == VALID_RECOVERY_CODE:
-                logging.info(f"Recovery code verified for username '{username}'.")
-                logging.info(f"TOTP secret for username '{username}': {USER_CREDENTIALS[username]['totp_secret']}")
+                logging.info(
+                    f"Recovery code verified for username '{username}'.")
+                logging.info(
+                    f"TOTP secret for username '{username}': {USER_CREDENTIALS[username]['totp_secret']}")
                 response = {
                     "message": "Recovery code and password verified",
                     "totp_secret": USER_CREDENTIALS[username]["totp_secret"]
                 }
-                return jsonify(response), 200  # Return the secret if the code is 000010
+                # Return the secret if the code is 000010
+                return jsonify(response), 200
             else:
-                logging.warning(f"Invalid recovery code for username '{username}'.")
+                logging.warning(
+                    f"Invalid recovery code for username '{username}'.")
                 response = {
                     "message": "Invalid recovery code"
                 }

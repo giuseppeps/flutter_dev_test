@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_dev_test/core/utils/image_path.dart';
-import 'package:flutter_dev_test/core/widgets/alerts/snack_bar.dart';
+import 'package:flutter_dev_test/core/widgets/alerts/custom_snack_bar.dart';
 import 'package:flutter_dev_test/theme/custom_colors.dart';
 import 'package:flutter_dev_test/theme/texts.dart';
 import 'package:flutter_svg/svg.dart';

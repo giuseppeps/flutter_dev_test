@@ -6,19 +6,10 @@ void showCustomSnackbar(BuildContext context, String message) {
   ScaffoldMessenger.of(context).showSnackBar(CustomSnackBar(message: message));
 }
 
-void showErrorSnackbar(BuildContext context, String message) {
-  ScaffoldMessenger.of(context).showSnackBar(CustomSnackBar(
-    message: message,
-    isError: true,
-  ));
-}
-
 class CustomSnackBar extends SnackBar {
   final String message;
-  final bool isError;
   CustomSnackBar({
     required this.message,
-    this.isError = false,
     super.key,
   }) : super(
           content: Column(
@@ -37,7 +28,7 @@ class CustomSnackBar extends SnackBar {
             ],
           ),
           behavior: SnackBarBehavior.floating,
-          backgroundColor: isError ? CustomColors.red400 : CustomColors.primary,
+          backgroundColor: CustomColors.primary,
           elevation: 6,
           duration: const Duration(seconds: 2),
           shape: RoundedRectangleBorder(

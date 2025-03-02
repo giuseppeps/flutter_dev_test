@@ -7,9 +7,8 @@ import 'package:http/http.dart' as http;
 
 class ApiClient {
   final String baseUri = AppTexts.baseUrl;
-  final bool isAuth;
 
-  ApiClient({required this.isAuth});
+  ApiClient();
 
   Future<ApiResponse> _request({
     required String method,
@@ -18,9 +17,8 @@ class ApiClient {
     dynamic body,
   }) async {
     late final http.Response response;
-    final uri = Uri.https(baseUri, path, query);
+    final uri = Uri.http(baseUri, path, query);
     final headers = {
-      'accept': 'application/json',
       'Content-Type': 'application/json',
     };
 
@@ -64,7 +62,6 @@ class ApiClient {
       if (retries == 0) {
         rethrow;
       }
-      await refreshToken();
       return await performRequestWithRetry(
         method: method,
         path: path,
@@ -88,11 +85,6 @@ class ApiClient {
         body: body,
       );
     }
-  }
-
-  //TODO implement
-  Future<String> refreshToken() async {
-    return '';
   }
 
   Future<ApiResponse> get({

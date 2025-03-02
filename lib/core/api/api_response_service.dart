@@ -41,7 +41,8 @@ class ApiResponseService {
     String? message;
     if (error.body.isNotEmpty) {
       try {
-        message = jsonDecode(error.body) ?? 'Erro desconhecido';
+        final Map<String, dynamic> json = jsonDecode(error.body);
+        message = json['message'] ?? 'Erro desconhecido';
       } catch (e) {
         message = 'Erro desconhecido';
       }
