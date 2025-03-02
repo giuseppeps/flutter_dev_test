@@ -6,6 +6,7 @@ class PasswordTextfield extends TextFieldCustom {
   const PasswordTextfield({
     super.key,
     required super.onChanged,
+    super.onSubmit,
     super.errorMessage,
     super.isEnabled,
     super.controller,

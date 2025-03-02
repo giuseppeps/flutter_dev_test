@@ -1,5 +1,5 @@
 class AppTexts {
-  static const String baseUrl = '127.0.0.1:5000';
+  static const String baseUrl = '10.0.2.2:5000';
 
   //API
   static const String login = '/auth/login';

@@ -37,7 +37,10 @@ class LoginScreen extends StatelessWidget {
                   children: [
                     EmailTextField(onChanged: loginCubit.onChangeEmail),
                     const SizedBox(height: 10),
-                    PasswordTextfield(onChanged: loginCubit.onChangePassword),
+                    PasswordTextfield(
+                      onChanged: loginCubit.onChangePassword,
+                      onSubmit: (_) => loginCubit.login(),
+                    ),
                     const SizedBox(height: 20),
                     CustomButton(
                       onPressed: loginCubit.login,
